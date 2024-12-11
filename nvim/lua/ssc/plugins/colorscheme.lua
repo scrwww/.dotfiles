@@ -1,16 +1,19 @@
-function BgColoring(color)
+function ColorNvim(color)
     vim.cmd('set termguicolors')
-    vim.cmd.colorscheme(color)
+    if color ~= nil then
+        vim.cmd.colorscheme(color)
+    else
+    vim.cmd.colorscheme("habamax")
+    end
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
-    "sainnhe/gruvbox-material",
+    "Zeioth/neon.nvim",
     lazy = false,
-    priority = 1000, dependencies = "rktjmp/lush.nvim",
+    priority = 1000,
     config = function()
-       BgColoring("gruvbox-material")
+        ColorNvim("neon-cherrykiss-storm")
     end,
 }
-
