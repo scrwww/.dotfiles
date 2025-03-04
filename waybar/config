@@ -1,0 +1,60 @@
+{
+    "height": 2, // Waybar height (to be removed for auto height)
+        "spacing": 5, // Gaps between modules (4px)
+        "modules-left": [
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+        ],
+        "modules-right": [
+            "pulseaudio",
+        "clock",
+        "tray"
+        ],
+        "keyboard-state": {
+            "numlock": true,
+            "capslock": true,
+            "format": "{name} {icon}",
+            "format-icons": {
+                "locked": "",
+                "unlocked": ""
+            }
+        },
+        "tray": {
+            // "icon-size": 21,
+            "spacing": 10
+        },
+        "clock": {
+            // "timezone": "America/New_York",
+            "format": "{:%a, %d %b | %H:%M}"
+        },
+        "cpu": {
+            "format": "{usage}% ",
+            "tooltip": false
+        },
+        "memory": {
+            "format": "{}% "
+        },
+        "pulseaudio": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "VOL: OUT {volume}% | IN {format_source}",
+            "format-muted": "VOL: OUT MUTED | IN {format_source}",
+            "format-bluetooth": " VOL: OUT {volume}% |  IN {format_source}",
+            "format-bluetooth-muted": " VOL: OUT MUTE |  IN {format_source_muted}",
+            "format-source": "{volume}%",
+            "format-source-muted": "",
+            "on-click": "pavucontrol"
+        },
+        "custom/media": {
+            "format": "{icon} {}",
+            "return-type": "json",
+            "max-length": 40,
+            "format-icons": {
+                "spotify": "",
+                "default": "🎜"
+            },
+            "escape": true,
+            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+                                                                       // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        },
+}
