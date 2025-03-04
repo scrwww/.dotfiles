@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-rose-pine-moon)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -40,17 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-
-(after! org
-  (setq org-directory "~/personal/org/")
-  (setq org-agenda-files '("~personal/org/"))
-  (setq org-archive-location "~personal/org/archive/archive.org")
-  (setq org-log-done 'time)
-  (setq org-refile-targets
-  '((("~/personal/org/school_assignments.org") :maxlevel . 5)
-    (("~/personal/org/school_lectures.org") :maxlevel . 5)
-    ))
-)
+(setq org-directory "~/personal/org")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -84,15 +74,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-;; Set initial frame size and position
-(defun my/set-initial-frame ()
-  (let* ((base-factor 0.70)
-	(a-width (* (display-pixel-width) base-factor))
-        (a-height (* (display-pixel-height) base-factor))
-        (a-left (truncate (/ (- (display-pixel-width) a-width) 2)))
-	(a-top (truncate (/ (- (display-pixel-height) a-height) 2))))
-    (set-frame-position (selected-frame) a-left a-top)
-    (set-frame-size (selected-frame) (truncate a-width)  (truncate a-height) t)))
-(setq frame-resize-pixelwise t)
-(my/set-initial-frame)
