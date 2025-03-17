@@ -3,13 +3,13 @@
 }
 
 window#waybar {
-	background-color: #1d2021;
+    background-color: rgba(28, 28, 28, 0.5);
     margin-top: 0;
     padding: 0;
 }
 
 #workspaces button {
-	background-color: #1d2021;
+    background-color: transparent;
     padding: 0;
 	color: #ebdbb2;
 
@@ -25,8 +25,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-	background-color: #ebdbb2;
-	color: #1d2021;
+	color: #fabd2f;
+    background-color: transparent;
 }
 
 .modules-left {
@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #pulseaudio {
-	background-color: #1d2021;
+    background-color: transparent;
 	color: #ebdbb2;
 
     padding: 0;
@@ -49,7 +49,7 @@ window#waybar {
 }
 
 #clock {
-	background-color: #1d2021;
+    background-color: transparent;
 	color: #ebdbb2;
 
     padding: 0;
@@ -58,7 +58,7 @@ window#waybar {
 }
 
 #tray {
-	background-color: #1d2021;
+    background-color: transparent;
 
     padding: 0;
 
