@@ -13,6 +13,7 @@ return {
     "rebelot/kanagawa.nvim",
     "ellisonleao/gruvbox.nvim",
     "slugbyte/lackluster.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 100,
 }
