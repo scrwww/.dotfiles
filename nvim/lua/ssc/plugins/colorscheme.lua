@@ -14,6 +14,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     "slugbyte/lackluster.nvim",
     "folke/tokyonight.nvim",
+    "rose-pine/neovim",
     lazy = false,
     priority = 100,
 }
