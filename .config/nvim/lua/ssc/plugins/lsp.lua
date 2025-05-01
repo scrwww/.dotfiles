@@ -29,6 +29,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "omnisharp",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
