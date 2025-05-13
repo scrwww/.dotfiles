@@ -40,6 +40,7 @@ packages=(
         pipewire-audio
         pipewire-jack
         hyprshot
+        flatpak
 )
 
 yay -S --noconfirm --needed "${packages[@]}"
@@ -73,3 +74,7 @@ echo "Creating symlinks with stow..."
 stow */  # this stows all directories in your dotfiles repo
 
 echo "Dotfiles successfully symlinked!
+
+mkdir $HOME/personal
+mkdir $HOME/personal/imgs
+mkdir $HOME/personal/imgs/wallpapers
