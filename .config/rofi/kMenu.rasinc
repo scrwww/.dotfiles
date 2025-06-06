@@ -12,8 +12,9 @@ font 				: "Iosevka Nerd Font Propo 14";
 }
 
 * {
-trans 				: #00000000;
-back  				: #000000FF;
+trans 				: #1c1c1cFF;
+back  				: #1c1c1cFF;
+selected  			: #282828FF;
 fore 				: #FFFFFF;
 }
 
@@ -22,18 +23,16 @@ border 				: 0px;
                       border-color 			: @back;
                       border-radius 			: 0px;
 padding 			: 0;
-width 				: 100%;
+width 				: 50%;
                       background-color 		: @back;
                       foreground-color 		: @fore;
 fullscreen 			: false;
-anchor				: south;
+anchor				: north;
 location			: north;
 }
 
 mainbox {
 enabled 			: true;
-margin 				: 10px 10px;
-padding 			: 10px;
                       background-color 		: @trans;
 }
 
@@ -41,7 +40,7 @@ prompt {
 enabled 			: false;
 border 				: 5px;
                       border-color 			: @trans;
-spacing 			: 4;
+spacing 			: 0;
                       text-color 			: @fore;
                       background-color 		: @trans;
 }
@@ -49,14 +48,12 @@ spacing 			: 4;
 textbox-prompt-colon{
 expand				: true;
 str				: "Application";
-margin				: 0px 4px 0px 0px;
                       text-color			: @fore;
 }
 
 entry {
-border				: 5px 0px 0px 0px;
                       border-color			: @trans;
-spacing				: 2;
+spacing				: 1;
                       background-color 		: @trans;
                       text-color			: @fore;
 blink				: true;
@@ -68,7 +65,7 @@ children			: [prompt, entry];
                       background-color		: @trans;
                       text-color			: @fore;
 expand				: false;
-padding				: 1.5%;
+padding				: 10px;
 }
 
 
@@ -77,8 +74,6 @@ listview {
     text-color			: @fore;
 columns				: 1;
                       fixed-height			: 0;
-spacing				: 5px;
-border				: 3px;
 dynamic				: true;
 layout				: vertical;
 cycle				: false;
@@ -89,21 +84,19 @@ element {
 enabled 			: true;
                       text-color 			: @fore;
                       background-color 	 	: @trans;
-spacing 			: 15px;
 orientation 			: vertical;
 }
 
 element-text {
     background-color		: @trans;
 expand				: true;
-margin				: 0.5%;
+margin				: 10px;
                       text-color 			: inherit;
 }
 
 element selected{
-    background-color		: @fore;
-    text-color			: @back; 
-margin				: 0.3%;	
+    background-color		: @selected;
+    text-color			: @fore; 
 border				: 0% 0% 0% 0%;
                       border-color			: @trans;
 }
