@@ -20,7 +20,7 @@ packages=(
         nvim
         hyprpaper
         waypaper
-        wofi
+        rofi-wayland
         ttf-iosevka-nerd
         waybar
         wl-clipboard
@@ -52,7 +52,3 @@ else
 fi
 
 cd "$DOTFILES_DIR" || exit
-
-echo "Creating symlinks with stow..."
-stow */
-echo "Dotfiles successfully symlinked!
