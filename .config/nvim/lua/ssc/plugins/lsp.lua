@@ -7,13 +7,13 @@ return {
         "j-hui/fidget.nvim",
     },
     config = function()
+
         local capabilities = require('ssc.capabilities').get_lsp_capabilities()
 
         -- FIDGET
         require("fidget").setup({})
         -- MASON
         require("mason").setup()
-
 
         -- LSP
         require("mason-lspconfig").setup({
@@ -22,29 +22,24 @@ return {
                 "rust_analyzer",
                 "ts_ls",
             },
+        })
 
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    runtime = { version = "Lua 5.1" },
+                    diagnostics = {
+                        globals = {"bit", "vim", "it", "describe", "before_each", "after_each" },
                     }
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = {"bit", "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end,
+                }
             }
+        })
+        vim.lsp.config("rust_analyzer", {
+            capabilities = capabilities,
+        })
+        vim.lsp.config("ts_ls", {
+            capabilities = capabilities,
         })
 
         -- DIAGNOSTICS
