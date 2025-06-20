@@ -3,7 +3,7 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         config=function ()
-            vim.cmd.colorscheme("vague")
+            vim.cmd.colorscheme("Tomorrow-Night-Eighties")
         end
     },
     {
