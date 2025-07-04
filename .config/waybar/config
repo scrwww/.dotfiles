@@ -59,23 +59,23 @@
             }
         },
         "cpu": {
-            "format": "{usage}% ",
+            "format": "Cpu: {usage}% ",
             "tooltip": false
         },
         "memory": {
             "interval": 1,
-            "format": "{}%",
+            "format": "Memory: {}%",
             "max-length": 10
         },
         "disk": {
             "interval": 30,
-            "format": "{percentage_free}%",
+            "format": "Disk: {percentage_free}%",
             "path": "/home"
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "OUT {volume}% | INPUT {format_source}",
-            "format-muted": "OUT MUTED | INPUT {format_source}",
+            "format": "Output: {volume}% | Input: {format_source}",
+            "format-muted": "Output: Muted | Input: {format_source}",
             "format-source": "{volume}%",
             "format-source-muted": "",
             "on-click": "pavucontrol"
