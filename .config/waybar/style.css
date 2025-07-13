@@ -1,72 +1,31 @@
 * {
-    font-size: 14px;
-    font-family: "Courier Prime";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0;
 }
 
 window#waybar {
-    padding: 0;
     color: #ffffff;
     background: transparent;
+    background: alpha(#1c1c1c,.3);
+    border-radius: 8px;
+}
+
+#window {
+    padding-right: 100px;
 }
 
 #workspaces button {
     background-color: transparent;
-    padding: 0 4px;
-    border-radius: 8px;
     color: #ffffff;
 }
 
 #workspaces button.active {
     background-color: transparent;
-    color: #606060;
+    color: #88c0d0;
 }
 
 #workspaces button:hover {
     color: #1c1c1c;
     background-color: #282828;
-}
-
-.modules-left {
-    border-radius: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin:8 0 0 8;
-    background: alpha(#1c1c1c,.7);
-}
-
-.modules-center {
-    border-radius: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin:8 0 0 0;
-    background: alpha(#1c1c1c,.7);
-}
-
-.modules-right {
-    border-radius: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin:8 8 0 0;
-    background: alpha(#1c1c1c,.7);
-}
-
-#pulseaudio {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0px;
-    color: #ffffff;
-}
-
-#clock {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0px;
-    color: #ffffff;
-}
-
-#tray {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0px;
-    color: #ffffff;
 }
