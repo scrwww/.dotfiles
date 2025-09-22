@@ -1,40 +1,50 @@
-set notification-error-bg       "#2E3440"
-set notification-error-fg       "#BF616A"
-set notification-warning-bg     "#2E3440"
-set notification-warning-fg     "#D08770"
-set notification-bg             "#2E3440"
-set notification-fg             "#D8DEE9"
+set recolor               true
+set recolor-keephue       true
 
-set completion-bg               "#2E3440"
-set completion-fg               "#D8DEE9"
-set completion-group-bg         "#3B4252"
-set completion-group-fg         "#D8DEE9"
-set completion-highlight-bg     "#88C0D0"
-set completion-highlight-fg     "#3B4252"
+# Default foreground and background
+set default-bg            "#151515"
+set default-fg            "#c5c8c6"
 
-set index-bg                    "#2E3440"
-set index-fg                    "#8FBCBB"
-set index-active-bg             "#8FBCBB"
-set index-active-fg             "#2E3440"
+# Recolor mode colors
+set recolor-lightcolor    "#151515"
+set recolor-darkcolor     "#c5c8c6"
 
-set inputbar-bg                 "#2E3440"
-set inputbar-fg                 "#E5E9F0"
+# Highlight colors
+set highlight-color       "#81a2be"
+set highlight-active-color "#f0c674"
 
-set statusbar-bg                "#2E3440"
-set statusbar-fg                "#E5E9F0"
+# Completion menu (command input suggestions)
+set completion-bg         "#1d1f21"
+set completion-fg         "#c5c8c6"
+set completion-group-bg   "#282828"
+set completion-group-fg   "#b5bd68"
+set completion-highlight-bg "#3b3f4c"
+set completion-highlight-fg "#f0c674"
 
-set highlight-color             "#D08770"
-set highlight-active-color      "#BF616A"
+# Input bar
+set inputbar-bg           "#1d1f21"
+set inputbar-fg           "#c5c8c6"
 
-set default-bg                  "#2E3440"
-set default-fg                  "#D8DEE9"
-set render-loading              "true"
-set render-loading-bg           "#2E3440"
-set render-loading-fg           "#434C5E"
+# Status bar
+set statusbar-bg          "#151515"
+set statusbar-fg          "#b294bb"
 
-set recolor-lightcolor          "#2E3440"
-set recolor-darkcolor           "#ECEFF4"
-set recolor                     "true"
-set guioptions                  none
+# Notification colors
+set notification-bg       "#151515"
+set notification-fg       "#c5c8c6"
+set notification-error-bg "#151515"
+set notification-error-fg "#cc6666"
+set notification-warning-bg "#151515"
+set notification-warning-fg "#de935f"
+
+# Index mode
+set index-bg              "#151515"
+set index-fg              "#c5c8c6"
+set index-active-bg       "#282828"
+set index-active-fg       "#f0c674"
+
+# Misc
+set render-loading-bg     "#151515"
+set render-loading-fg     "#81a2be"
 
 set selection-clipboard clipboard

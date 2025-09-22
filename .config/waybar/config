@@ -1,11 +1,12 @@
 {
-        "margin-top": 4,
-        "margin-left": 100,
-        "margin-right": 100,
-        "spacing": 8, // Gaps between modules (4px)
+        "margin-top": 0,
+        "position": "bottom",
+        "margin-left": 0,
+        "margin-right": 0,
+        "spacing": 2, // Gaps between modules (4px)
         "modules-left": ["hyprland/workspaces","tray","hyprland/window"],
-        "modules-center": ["clock"],
-        "modules-right": ["pulseaudio","memory"],
+        "modules-center": [],
+        "modules-right": ["pulseaudio","memory","clock"],
 
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -57,7 +58,7 @@
         },
         "memory": {
             "interval": 1,
-            "format": "Memory: {}%",
+            "format": "RAM: {}%",
             "max-length": 10
         },
         "disk": {
