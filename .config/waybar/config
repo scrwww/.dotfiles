@@ -4,9 +4,9 @@
         "margin-left": 0,
         "margin-right": 0,
         "spacing": 2, // Gaps between modules (4px)
-        "modules-left": ["hyprland/workspaces","tray","hyprland/window"],
+        "modules-left": ["hyprland/workspaces","hyprland/window"],
         "modules-center": [],
-        "modules-right": ["pulseaudio","memory","clock"],
+        "modules-right": ["pulseaudio","memory","clock","tray"],
 
         "hyprland/workspaces": {
             "format": "{icon}",

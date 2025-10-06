@@ -13,8 +13,8 @@ font 				: "Courier Pro 10";
 
 * {
     trans 				: #00000000;
-    back  				: #3b4252FF;
-    selected  			: #4c566aFF;
+    back  				: #000000FF;
+    selected  			        : #00000000;
     fore 				: #FFFFFF;
 }
 

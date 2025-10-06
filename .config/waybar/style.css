@@ -1,6 +1,6 @@
 * {
         font-size: 10px;
-        font-family: "Input";
+        font-family: "Input Mono";
         font-weight: 600;
         padding: 0;
         min-height: 0;
@@ -8,23 +8,23 @@
 }
 
 .modules-left {
-        background: #606060;
+        background: #333333;
         padding-left: 0px;
         padding-right: 0px;
 }
 .modules-center {
-        background: #606060;
+        background: #333333;
         padding-left: 0px;
         padding-right: 0px;
 }
 .modules-right {
-        background: #606060;
+        background: #333333;
         padding-left: 0px;
         padding-right: 0px;
 }
 
 window#waybar {
-        background: #606060;
+        background: #333333;
         color: #ffffff;
 /*        background: transparent;*/
 }
@@ -37,5 +37,5 @@ window#waybar {
 
 #workspaces button.active {
         background-color: transparent;
-        color: #88c0d0;
+        color: #83a598;
 }
