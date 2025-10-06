@@ -1,2 +1,5 @@
 .config/qutebrowser/*
+.config/rmpc
+.config/mpd
+.config/doom
 !.config/qutebrowser/config.py
