@@ -96,7 +96,6 @@ c.fonts.web.family.standard = 'monospace'
 c.content.blocking.enabled = True
 c.content.blocking.method = 'adblock' # uncomment this if you install python-adblock
 c.content.blocking.adblock.lists = [
-        "https://github.com/ewpratten/youtube_ad_blocklist/blob/master/blocklist.txt",
         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",

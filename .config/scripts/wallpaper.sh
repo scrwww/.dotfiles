@@ -22,6 +22,9 @@ rm "$tmpfile"
 [[ -z ${wallpaper_sel:-} ]] && exit 0
 [[ ! -f "$wallpaper_sel" ]] && { echo "File not found: $wallpaper_sel"; exit 1; }
 
+config_file="$HOME/.cache/last-wallpaper"
+echo "$wallpaper_sel" > "$config_file"
+
 echo "Setting wallpaper: $wallpaper_sel"
 
 monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
