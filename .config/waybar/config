@@ -1,77 +1,82 @@
 {
         "margin-top": 0,
-        "position": "bottom",
-        "margin-left": 0,
-        "margin-right": 0,
-        "spacing": 2, // Gaps between modules (4px)
-        "modules-left": ["hyprland/workspaces","hyprland/window"],
-        "modules-center": [],
-        "modules-right": ["pulseaudio","memory","clock","tray"],
+                "position": "bottom",
+                "margin-left": 0,
+                "margin-right": 0,
+                "spacing": 2, // Gaps between modules (4px)
+                "modules-left": ["hyprland/workspaces","hyprland/window","mpris"],
+                "modules-center": [],
+                "modules-right": ["tray","pulseaudio","memory","disk","clock"],
 
-        "hyprland/workspaces": {
-            "format": "{icon}",
-            "format-icons": {
-                "10": "n",
-            }
-        },
-        "keyboard-state": {
-            "numlock": true,
-            "capslock": true,
-            "format": "{name} {icon}",
-            "format-icons": {
-                "locked": "",
-                "unlocked": ""
-            }
-        },
-        "tray": {
-            "spacing": 10
-        },
-        "clock": {
-            "interval": 1,
-            "format": "{:%H:%M:%S}",
-            "format-alt": "{:%A, %d %B, %Y - %R}",
-            "tooltip-format": "<tt><small>{calendar}</small></tt>",
-            "calendar": {
-                "mode"          : "year",
-                "mode-mon-col"  : 3,
-                "weeks-pos"     : "right",
-                "on-scroll"     : 1,
-                "format": {
-                    "months":     "<span><b>{}</b></span>",
-                    "days":       "<span><b>{}</b></span>",
-                    "weeks":      "<span><b>W{}</b></span>",
-                    "weekdays":   "<span><b>{}</b></span>",
-                    "today":      "<span><b><u>{}</u></b></span>"
-                }
-            },
-            "actions":  {
-                "on-click-right": "mode",
-                "on-scroll-up": "tz_up",
-                "on-scroll-down": "tz_down",
-                "on-scroll-up": "shift_up",
-                "on-scroll-down": "shift_down"
-            }
-        },
-        "cpu": {
-            "format": "Cpu: {usage}% ",
-            "tooltip": false
-        },
-        "memory": {
-            "interval": 1,
-            "format": "RAM: {}%",
-            "max-length": 10
-        },
-        "disk": {
-            "interval": 30,
-            "format": "Disk: {percentage_free}%",
-            "path": "/home"
-        },
-        "pulseaudio": {
-            // "scroll-step": 1, // %, can be a float
-            "format": "Out: {volume}% | In: {format_source}",
-            "format-muted": "Out: Muted | In: {format_source}",
-            "format-source": "{volume}%",
-            "format-source-muted": "",
-            "on-click": "pavucontrol"
-        },
+                "hyprland/workspaces": {
+                        "format": "{icon}",
+                        "format-icons": {
+                                "10": "n",
+                        }
+                },
+                "hyprland/window": {
+                        "max-length": 40
+                },
+                "mpris": {
+                        "format": "<span color='#252525'>[ </span><span color='#afa193'><b>music:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
+                        "format-paused": "<span color='#252525'>[ </span><span color='#afa193'><b>paused:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
+                        "max-length": 40,
+                        "player-icons": {
+                                "default": "▶",
+                                "spotify": " "
+                        },
+                        "status-icons": {
+                                "paused": "⏸"
+                        },
+                        // Isso garante que tudo fique em minúsculo como no seu relógio
+                        "artist-len": 15,
+                        "title-len": 20
+                },
+                "tray": {
+                        "spacing": 10
+                },
+                "pulseaudio": {
+                        // "scroll-step": 1, // %, can be a float
+                        "format": "O:{volume}% I:{format_source}",
+                        "format-muted": "O:Muted I:{format_source}",
+                        "format-source": "{volume}%",
+                        "format-source-muted": "",
+                        "on-click": "pwvucontrol"
+                },
+                "memory": {
+                        "interval": 1,
+                        "format": "RAM: {}%",
+                        "max-length": 10
+                },
+                "disk": {
+                        "interval": 30,
+                        "format": "DISK: {percentage_free}%",
+                        "path": "/home"
+                },
+                "clock": {
+                        "interval": 1,
+                        "format": "{:%H:%M:%S}",
+                        "format-alt": "{:%A, %d %B, %Y - %R}",
+                        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+                        "calendar": {
+                                "mode"          : "year",
+                                "mode-mon-col"  : 3,
+                                "weeks-pos"     : "right",
+                                "on-scroll"     : 1,
+                                "format": {
+                                        "months":     "<span><b>{}</b></span>",
+                                        "days":       "<span><b>{}</b></span>",
+                                        "weeks":      "<span><b>W{}</b></span>",
+                                        "weekdays":   "<span><b>{}</b></span>",
+                                        "today":      "<span><b><u>{}</u></b></span>"
+                                }
+                        },
+                        "actions":  {
+                                "on-click-right": "mode",
+                                "on-scroll-up": "tz_up",
+                                "on-scroll-down": "tz_down",
+                                "on-scroll-up": "shift_up",
+                                "on-scroll-down": "shift_down"
+                        }
+                },
 }

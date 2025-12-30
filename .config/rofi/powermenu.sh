@@ -1,6 +1,6 @@
 #!/bin/bash
 
-theme="kMenu"
+theme="kanso-rofi"
 dir="$HOME/.config/rofi"
 rofi_command="rofi -theme $dir/$theme -no-fixed-num-lines"
 

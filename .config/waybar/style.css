@@ -1,41 +1,30 @@
+@define-color background #efe6c6;
+@define-color accent #d6b893;
+@define-color foreground #6D6D69;
+@define-color selection #c7d7e0;
+@define-color dim0 #545464;
+
 * {
-        font-size: 10px;
-        font-family: "Input Mono";
-        font-weight: 600;
-        padding: 0;
-        min-height: 0;
-        min-width: 0;
+    font-size: 13px;
+    font-family: "CommitMono";
+    font-weight: 200;
 }
 
-.modules-left {
-        background: #333333;
-        padding-left: 0px;
-        padding-right: 0px;
-}
-.modules-center {
-        background: #333333;
-        padding-left: 0px;
-        padding-right: 0px;
-}
-.modules-right {
-        background: #333333;
-        padding-left: 0px;
-        padding-right: 0px;
+#workspaces, #window, #mpris, #pulseaudio, #memory, #clock, #disk, #tray {
+        margin-right: 10px;
 }
 
 window#waybar {
-        background: #333333;
-        color: #ffffff;
-/*        background: transparent;*/
+    background: @background;
+    color: @foreground;
 }
 
 #workspaces button {
-/*        background: transparent;*/
-
-        color: #ffffff;
+    color: @foreground;
+    padding: 0 4px;
+    border-radius: 0;
 }
 
 #workspaces button.active {
-        background-color: transparent;
-        color: #83a598;
+    border-bottom: solid 2px @foreground;
 }
