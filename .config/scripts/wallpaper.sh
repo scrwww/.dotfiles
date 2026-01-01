@@ -3,7 +3,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-wallpaper_dir="$HOME/personal/wallpapers"
+wallpaper_dir="$HOME/Pictures/wallpapers"
 tmpfile="/tmp/wallpaper-selection"
 
 foot -e bash -c "
