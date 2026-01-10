@@ -1,0 +1,30 @@
+@define-color background #efe6c6;
+@define-color accent #d6b893;
+@define-color foreground #6D6D69;
+@define-color selection #c7d7e0;
+@define-color dim0 #545464;
+
+* {
+    font-size: 13px;
+    font-family: "CommitMono";
+    font-weight: 200;
+}
+
+#workspaces, #window, #mpris, #language, #pulseaudio, #memory, #clock, #disk, #tray {
+        margin-right: 10px;
+}
+
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding: 0 4px;
+    border-radius: 0;
+}
+
+#workspaces button.active {
+    border-bottom: solid 2px @foreground;
+}
