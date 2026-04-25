@@ -14,7 +14,6 @@ yay --version
 echo "Starting installation of AUR packages..."
 
 packages=(
-        git
         hyprland
         kitty
         tmux
@@ -38,6 +37,7 @@ packages=(
         pipewire-alsa
         pipewire-audio
         pipewire-jack
+        hyprshot
 )
 
 yay -S --noconfirm --needed "${packages[@]}"
