@@ -4,16 +4,15 @@
 }
 
 window#waybar {
-    margin-top: 0;
     padding: 0;
-    background-color: #1c1c1c;
     color: #ffffff;
+    background: transparent;
 }
 
 #workspaces button {
     background-color: transparent;
     padding: 0 4px;
-    border-radius: 0px;
+    border-radius: 8px;
     color: #ffffff;
 }
 
@@ -23,18 +22,29 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    color: #ffffff;
+    color: #1c1c1c;
     background-color: #282828;
 }
 
 .modules-left {
-    margin-top: 0;
-    margin-left: 0;
+    border-radius: 8px;
+    padding: 5px;
+    margin:8 0 0 8;
+    background: alpha(#1c1c1c,.3);
+}
+
+.modules-center {
+    border-radius: 8px;
+    padding: 5px;
+    margin:8 0 0 0;
+    background: alpha(#1c1c1c,.3);
 }
 
 .modules-right {
-    margin-top: 0;
-    margin-right: 5px;
+    border-radius: 8px;
+    padding: 5px;
+    margin:8 8 0 0;
+    background: alpha(#1c1c1c,.3);
 }
 
 #pulseaudio {

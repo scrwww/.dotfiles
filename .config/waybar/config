@@ -1,8 +1,9 @@
 {
     "height": 2, // Waybar height (to be removed for auto height)
         "spacing": 5, // Gaps between modules (4px)
-        "modules-left": ["hyprland/workspaces"],
-        "modules-right": ["disk","pulseaudio","clock","tray","memory"],
+        "modules-left": ["tray","clock","hyprland/window"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["pulseaudio","memory","disk",],
 
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -33,7 +34,7 @@
             "spacing": 10
         },
         "clock": {
-            "format": "-- {:%H:%M}",
+            "format": "{:%H:%M}",
             "format-alt": "{:%A, %B %d, %Y (%R)}  ",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "calendar": {
@@ -63,20 +64,18 @@
         },
         "memory": {
             "interval": 1,
-            "format": "-- {}% ",
+            "format": "{}% ",
             "max-length": 10
         },
         "disk": {
             "interval": 30,
-            "format": "{percentage_free}% DISK",
+            "format": "{percentage_free}%",
             "path": "/home"
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "-- OUT {volume}% | INPUT {format_source}",
-            "format-muted": "-- OUT MUTED | INPUT {format_source}",
-            "format-bluetooth": "--  OUT {volume}% |  INPUT {format_source}",
-            "format-bluetooth-muted": "--  OUT MUTE |  INPUT {format_source_muted}",
+            "format": "OUT {volume}% | INPUT {format_source}",
+            "format-muted": "OUT MUTED | INPUT {format_source}",
             "format-source": "{volume}%",
             "format-source-muted": "",
             "on-click": "pavucontrol"
