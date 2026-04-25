@@ -38,7 +38,6 @@
                         "format": "keyb: {}",
                         "format-en": "en",
                         "format-pt": "pt",
-                        "keyboard-name": "by-tech-usb-gaming-keyboard"
                 },
                 "pulseaudio": {
                         // "scroll-step": 1, // %, can be a float
