@@ -18,9 +18,11 @@ packages=(
         hyprland
         kitty
         tmux
+        fzf
         firefox
         nvim
         hyprpaper
+        waypaper
         zathura
         wofi
         ttf-iosevka-nerd
