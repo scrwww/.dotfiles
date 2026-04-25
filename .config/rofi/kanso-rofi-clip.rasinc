@@ -1,0 +1,46 @@
+configuration {
+    font: "CommitMono 10";
+    show-icons: true;
+    click-to-exit: true;
+    display-drun: ">";
+    drun-display-format: "{name}";
+}
+
+* {
+    background-color: #f2f1ef;
+    text-color: #22262D;
+}
+
+window {
+    border: 5px;
+    border-color: #22262D;
+    margin: 50px;
+    width: 70%;
+    height: 80%;
+    anchor: north;
+    location: north;
+}
+
+element-icon {
+    size: 64px;
+}
+
+entry {
+    background-color: #f2f1ef;
+    text-color: #22262D;
+    placeholder-color: #545464;
+}
+
+element selected {
+    background-color: #c7d7e0;
+    text-color: #22262D;
+}
+
+listview {
+    columns: 4;
+    dynamic: true;
+}
+
+element-text {
+    margin: 4px;
+}
