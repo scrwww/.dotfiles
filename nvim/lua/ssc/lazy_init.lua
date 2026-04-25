@@ -9,4 +9,4 @@ require("lazy").setup({
         spec = "ssc.plugins",
         change_detection = { notify = false },
 })
-SetTheme("gruvbox")
+SetTheme("tokyonight")
