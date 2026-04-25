@@ -23,8 +23,6 @@ echo "$wallpaper_sel" > "$config_file"
 
 echo "Setting wallpaper: $wallpaper_sel"
 
-monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
-
 hyprctl hyprpaper unload all
 hyprctl hyprpaper preload $wallpaper_sel
-hyprctl hyprpaper wallpaper "$monitor, $wallpaper_sel"
+hyprctl hyprpaper wallpaper ",$wallpaper_sel"
