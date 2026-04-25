@@ -1,4 +1,5 @@
 @import "./rose-pine.css";
+        color: @text;
 
 * {
         font-size: 14px;

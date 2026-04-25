@@ -1,17 +1,24 @@
 {
     "height": 2, // Waybar height (to be removed for auto height)
         "spacing": 5, // Gaps between modules (4px)
-        "modules-left": [
-            "hyprland/workspaces"
-        ],
-        "modules-center": [
-        ],
-        "modules-right": [
-            "disk",
-        "pulseaudio",
-        "clock",
-        "tray"
-        ],
+        "modules-left": ["hyprland/workspaces"],
+        "modules-right": ["disk","pulseaudio","clock","tray","memory"],
+        
+        
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "1": "a",
+                "2": "s",
+                "3": "d",
+                "4": "f",
+                "5": "g",
+                "6": "h",
+                "7": "j",
+                "8": "k",
+                "9": "l",
+            }
+        },
         "keyboard-state": {
             "numlock": true,
             "capslock": true,
@@ -59,15 +66,15 @@
         },
         "disk": {
             "interval": 30,
-            "format": "Only {percentage_free}% remaining on {path}",
+            "format": "{percentage_free}% remaining on disk",
             "path": "/"
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "VOL: OUT {volume}% | IN {format_source}",
-            "format-muted": "VOL: OUT MUTED | IN {format_source}",
-            "format-bluetooth": " VOL: OUT {volume}% |  IN {format_source}",
-            "format-bluetooth-muted": " VOL: OUT MUTE |  IN {format_source_muted}",
+            "format": "OUT {volume}% | INPUT {format_source}",
+            "format-muted": "OUT MUTED | INPUT {format_source}",
+            "format-bluetooth": " OUT {volume}% |  INPUT {format_source}",
+            "format-bluetooth-muted": " OUT MUTE |  INPUT {format_source_muted}",
             "format-source": "{volume}%",
             "format-source-muted": "",
             "on-click": "pwvucontrol"
