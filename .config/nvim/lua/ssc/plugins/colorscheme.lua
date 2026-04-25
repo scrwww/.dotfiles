@@ -3,7 +3,7 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         config=function ()
-            vim.cmd.colorscheme("Tomorrow-Night-Eighties")
+            vim.cmd.colorscheme("nord")
         end
     },
     {
@@ -35,5 +35,8 @@ return {
     },
     {
         "savq/melange-nvim",
+    },
+    {
+        "arcticicestudio/nord-vim",
     },
 }

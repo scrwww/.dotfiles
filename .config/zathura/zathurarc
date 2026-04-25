@@ -1,34 +1,40 @@
-set notification-error-bg       "rgba(40,40,40,1)"     # bg
-set notification-error-fg       "rgba(251,73,52,1)"    # bright:red
-set notification-warning-bg     "rgba(40,40,40,1)"     # bg
-set notification-warning-fg     "rgba(250,189,47,1)"   # bright:yellow
-set notification-bg             "rgba(40,40,40,1)"     # bg
-set notification-fg             "rgba(184,187,38,1)"   # bright:green
+set notification-error-bg       "#2E3440"
+set notification-error-fg       "#BF616A"
+set notification-warning-bg     "#2E3440"
+set notification-warning-fg     "#D08770"
+set notification-bg             "#2E3440"
+set notification-fg             "#D8DEE9"
 
-set completion-bg               "rgba(80,73,69,1)"     # bg2
-set completion-fg               "rgba(235,219,178,1)"  # fg
-set completion-group-bg         "rgba(60,56,54,1)"     # bg1
-set completion-group-fg         "rgba(146,131,116,1)"  # gray
-set completion-highlight-bg     "rgba(131,165,152,1)"  # bright:blue
-set completion-highlight-fg     "rgba(80,73,69,1)"     # bg2
+set completion-bg               "#2E3440"
+set completion-fg               "#D8DEE9"
+set completion-group-bg         "#3B4252"
+set completion-group-fg         "#D8DEE9"
+set completion-highlight-bg     "#88C0D0"
+set completion-highlight-fg     "#3B4252"
 
-# Define the color in index mode
-set index-bg                    "rgba(80,73,69,1)"     # bg2
-set index-fg                    "rgba(235,219,178,1)"  # fg
-set index-active-bg             "rgba(131,165,152,1)"  # bright:blue
-set index-active-fg             "rgba(80,73,69,1)"     # bg2
+set index-bg                    "#2E3440"
+set index-fg                    "#8FBCBB"
+set index-active-bg             "#8FBCBB"
+set index-active-fg             "#2E3440"
 
-set inputbar-bg                 "rgba(40,40,40,1)"     # bg
-set inputbar-fg                 "rgba(235,219,178,1)"  # fg
+set inputbar-bg                 "#2E3440"
+set inputbar-fg                 "#E5E9F0"
 
-set statusbar-bg                "rgba(80,73,69,1)"     # bg2
-set statusbar-fg                "rgba(235,219,178,1)"  # fg
+set statusbar-bg                "#2E3440"
+set statusbar-fg                "#E5E9F0"
 
-set highlight-color             "rgba(250,189,47,0.5)" # bright:yellow
-set highlight-active-color      "rgba(254,128,25,0.5)" # bright:orange
+set highlight-color             "#D08770"
+set highlight-active-color      "#BF616A"
 
-set default-bg                  "rgba(40,40,40,1)"     # bg
-set default-fg                  "rgba(235,219,178,1)"  # fg
-set render-loading              true
-set render-loading-bg           "rgba(40,40,40,1)"     # bg
-set render-loading-fg           "rgba(235,219,178,1)"  # fg
+set default-bg                  "#2E3440"
+set default-fg                  "#D8DEE9"
+set render-loading              "true"
+set render-loading-bg           "#2E3440"
+set render-loading-fg           "#434C5E"
+
+set recolor-lightcolor          "#2E3440"
+set recolor-darkcolor           "#ECEFF4"
+set recolor                     "true"
+set guioptions                  none
+
+set selection-clipboard clipboard

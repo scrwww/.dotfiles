@@ -1,8 +1,8 @@
 configuration {
-font 				: "Iosevka Nerd Font Propo 14";
+font 				: "Courier Pro 10";
                       show-icons 			: false;
                       sidebar-mode 			: true;
-                      scroll-method 			: 1;
+                      scroll-method 			: 2;
                       click-to-exit 			: true;
                       combi-hide-mode-prefix 		: false;
                       display-drun 			: ">";
@@ -12,100 +12,92 @@ font 				: "Iosevka Nerd Font Propo 14";
 }
 
 * {
-trans 				: #1c1c1cFF;
-back  				: #1c1c1cFF;
-selected  			: #282828FF;
-fore 				: #FFFFFF;
+    trans 				: #00000000;
+    back  				: #3b4252FF;
+    selected  			: #4c566aFF;
+    fore 				: #FFFFFF;
 }
 
 window {
-border 				: 5px;
-margin              : 50px;
-                      border-color 			: @back;
-                      border-radius 			: 8px;
-padding 			: 0;
-width 				: 50%;
-                      background-color 		: @back;
-                      foreground-color 		: @fore;
-fullscreen 			: false;
-anchor				: north;
-location			: north;
+    border 				: 5px;
+    margin              : 50px;
+    border-radius 		: 0px;
+    padding 			: 0;
+    width 				: 50%;
+    background-color 	: @back;
+    foreground-color 	: @fore;
+    fullscreen 			: false;
+    anchor				: north;
+    location			: north;
 }
 
 mainbox {
-enabled 			: true;
-                      background-color 		: @trans;
+    enabled 			: true;
+    background-color 	: @trans;
 }
 
 prompt {
-enabled 			: false;
-border 				: 5px;
-                      border-color 			: @trans;
-spacing 			: 0;
-                      text-color 			: @fore;
-                      background-color 		: @trans;
+    enabled 			: false;
 }
 
 textbox-prompt-colon{
-expand				: true;
-str				: "Application";
-                      text-color			: @fore;
+    expand				: true;
+    str				    : "Application";
 }
 
 entry {
-                      border-color			: @trans;
-spacing				: 1;
-                      background-color 		: @trans;
-                      text-color			: @fore;
-blink				: true;
-placeholder 			: #FFFFFF;
+    border-color		: @back;
+    background-color 	: @back;
+    text-color			: @fore;
+    blink				: true;
+    placeholder 		: #FFFFFF;
 }
 
 inputbar {
-children			: [prompt, entry];
-                      background-color		: @trans;
-                      text-color			: @fore;
-expand				: false;
-padding				: 10px;
+    children			: [prompt, entry];
+    background-color	: @back;
+    text-color			: @fore;
+    expand				: false;
+    padding				: 4px;
 }
 
 
 listview {
-    background-color 		: @trans;
+    background-color 	: @back;
     text-color			: @fore;
-columns				: 1;
-                      fixed-height			: 0;
-dynamic				: true;
-layout				: vertical;
-cycle				: false;
-cursor 				: pointer;
+    columns				: 1;
+    fixed-height		: 0;
+    dynamic				: true;
+    layout				: vertical;
+    cycle				: false;
+    cursor 				: pointer;
 }
 
 element {
-enabled 			: true;
-                      text-color 			: @fore;
-                      background-color 	 	: @trans;
-orientation 			: vertical;
+    enabled 			: true;
+    text-color 			: @fore;
+    background-color 	: @back;
+    orientation 		: vertical;
 }
 
 element-text {
-    background-color		: @trans;
-expand				: true;
-margin				: 10px;
-                      text-color 			: inherit;
+    background-color	: @trans;
+    expand				: true;
+    margin				: 4px;
+    text-color 			: inherit;
 }
 
 element selected{
-    background-color		: @selected;
+    background-color	: @selected;
     text-color			: @fore; 
-border				: 0% 0% 0% 0%;
-                      border-color			: @trans;
+    border				: 0% 0% 0% 0%;
+    border-color		: @back;
 }
 
 button {
-    horizontal-align		: 0;
-    vertical-align			: 0;
-    background-color		: @trans;
+    horizontal-align	: 0;
+    vertical-align		: 0;
+    background-color	: @back;
     text-color			: @fore;
-border				: 0px;
+    border				: 0px;
 }

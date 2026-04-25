@@ -1,22 +1,15 @@
 {
-    "height": 2, // Waybar height (to be removed for auto height)
-        "spacing": 5, // Gaps between modules (4px)
-        "modules-left": ["tray","clock","hyprland/window"],
-        "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio","memory","disk",],
+        "margin-top": 4,
+        "margin-left": 100,
+        "margin-right": 100,
+        "spacing": 8, // Gaps between modules (4px)
+        "modules-left": ["hyprland/workspaces","tray","hyprland/window"],
+        "modules-center": ["clock"],
+        "modules-right": ["pulseaudio","memory"],
 
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
-                "1": "a",
-                "2": "s",
-                "3": "d",
-                "4": "f",
-                "5": "g",
-                "6": "h",
-                "7": "j",
-                "8": "k",
-                "9": "l",
                 "10": "n",
             }
         },
@@ -30,12 +23,12 @@
             }
         },
         "tray": {
-            // "icon-size": 21,
             "spacing": 10
         },
         "clock": {
-            "format": "{:%H:%M}",
-            "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+            "interval": 1,
+            "format": "{:%H:%M:%S}",
+            "format-alt": "{:%A, %d %B, %Y - %R}",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "calendar": {
                 "mode"          : "year",
@@ -74,8 +67,8 @@
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "Output: {volume}% | Input: {format_source}",
-            "format-muted": "Output: Muted | Input: {format_source}",
+            "format": "Out: {volume}% | In: {format_source}",
+            "format-muted": "Out: Muted | In: {format_source}",
             "format-source": "{volume}%",
             "format-source-muted": "",
             "on-click": "pavucontrol"
