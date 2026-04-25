@@ -14,21 +14,21 @@ window#waybar {
 #workspaces button {
         background-color: transparent;
         padding: 0;
-        color: @foam;
+        color: @text;
 
         border-radius: 0px;
 }
 
 #workspaces button:hover {
-        background: @foam;
-        color: @text;
+        background: @text;
+        color: @foam;
         box-shadow: inherit;
         text-shadow: inherit;
         border: transparent;
 }
 
 #workspaces button.active {
-        color: @text;
+        color: @foam;
         background-color: transparent;
 }
 
