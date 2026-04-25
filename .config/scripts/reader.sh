@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-books_dir="/home/un/personal/books/"
+books_dir="$HOME/Documents"
 echo $books_dir
-bn="$(find $books_dir -type f | fzf)"
 
-if [[ -z $bn ]]; then
+book_sel="$(find $books_dir -type f -maxdepth 2 | grep -E 'pdf|pub|epub' | fzf )"
+
+if [[ -z $book_sel ]]; then
     exit 0
 fi
 
-zathura --fork "${bn}" && exit
-
+zathura --fork "${book_sel}" && exit
