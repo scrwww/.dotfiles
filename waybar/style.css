@@ -1,66 +1,70 @@
+@import "./rose-pine.css";
+
 * {
-	font-size: 10px;
+        font-size: 10px;
+        font-family: "MartianMono Nerd Font";
 }
 
 window#waybar {
-    background-color: rgba(28, 28, 28, 0.5);
-    margin-top: 0;
-    padding: 0;
+        background-color: @base;
+        margin-top: 0;
+        padding: 0;
 }
 
 #workspaces button {
-    background-color: transparent;
-    padding: 0;
-	color: #ebdbb2;
+        background-color: transparent;
+        padding: 0;
+        color: @foam;
 
-	border-radius: 0px;
+        border-radius: 0px;
 }
 
 #workspaces button:hover {
-	background: #ebdbb2;
-	color: #1d2021;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	border: transparent;
+        background: @foam;
+        color: @text;
+        box-shadow: inherit;
+        text-shadow: inherit;
+        border: transparent;
 }
 
 #workspaces button.active {
-	color: #fabd2f;
-    background-color: transparent;
+        color: @text;
+        background-color: transparent;
 }
 
 .modules-left {
-    margin-top: 0;
-    margin-left: 0;
+        margin-top: 0;
+        margin-left: 0;
 }
 
 .modules-right {
-    margin-top: 0;
-    margin-right: 5px;
+        margin-top: 0;
+        margin-right: 5px;
 }
 
 #pulseaudio {
-    background-color: transparent;
-	color: #ebdbb2;
+        color: @text;
+        background-color: transparent;
 
-    padding: 0;
+        padding: 0;
 
-	border-radius: 0px;
+        border-radius: 0px;
 }
 
 #clock {
-    background-color: transparent;
-	color: #ebdbb2;
+        color: @text;
+        background-color: transparent;
 
-    padding: 0;
+        padding: 0;
 
-	border-radius: 0px;
+        border-radius: 0px;
 }
 
 #tray {
-    background-color: transparent;
+        color: @text;
+        background-color: transparent;
 
-    padding: 0;
+        padding: 0;
 
-	border-radius: 0px;
+        border-radius: 0px;
 }
