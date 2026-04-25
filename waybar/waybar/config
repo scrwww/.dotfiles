@@ -1,6 +1,6 @@
 {
         "margin-top": 0,
-                "position": "bottom",
+                "position": "top",
                 "margin-left": 0,
                 "margin-right": 0,
                 "spacing": 2, // Gaps between modules (4px)
@@ -18,7 +18,7 @@
                         "max-length": 40
                 },
                 "mpris": {
-                        "format": "<span color='#6D6D69'>[ </span><span color='#c4b08f'><b>music:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
+                        "format": "<span color='#6D6D69'>[ </span><span color='#c4b08f'><b>sound:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
                         "format-paused": "<span color='#6D6D69'>[ </span><span color='#c4b08f'><b>paused:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
                         "max-length": 40,
                         "player-icons": {
