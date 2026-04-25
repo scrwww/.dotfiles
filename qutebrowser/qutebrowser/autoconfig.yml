@@ -35,7 +35,7 @@ settings:
   content.blocking.method:
     global: both
   scrolling.smooth:
-    global: true
+    global: false
   tabs.position:
     global: left
   tabs.show:
