@@ -1,0 +1,13 @@
+swaylock \
+  --daemonize \
+  --color 282828 \
+  --indicator-radius 160 \
+  --indicator-thickness 20 \
+  --inside-color 00000000 \
+  --inside-clear-color 00000000 \
+  --inside-ver-color 00000000 \
+  --inside-wrong-color 00000000 \
+  --line-uses-ring \
+  --line-color 00000000 \
+  --font 'NotoSans Nerd Font Mono:style=Thin,Regular 40' \
+  --text-color 00000000 \
