@@ -10,7 +10,7 @@
     font-weight: 200;
 }
 
-#workspaces, #window, #mpris, #pulseaudio, #memory, #clock, #disk, #tray {
+#workspaces, #window, #mpris, #language, #pulseaudio, #memory, #clock, #disk, #tray {
         margin-right: 10px;
 }
 

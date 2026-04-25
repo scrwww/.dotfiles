@@ -6,7 +6,7 @@
                 "spacing": 2, // Gaps between modules (4px)
                 "modules-left": ["hyprland/workspaces","hyprland/window","mpris"],
                 "modules-center": [],
-                "modules-right": ["tray","pulseaudio","memory","disk","clock"],
+                "modules-right": ["tray","hyprland/language","pulseaudio","memory","disk","clock"],
 
                 "hyprland/workspaces": {
                         "format": "{icon}",
@@ -18,8 +18,8 @@
                         "max-length": 40
                 },
                 "mpris": {
-                        "format": "<span color='#252525'>[ </span><span color='#afa193'><b>music:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
-                        "format-paused": "<span color='#252525'>[ </span><span color='#afa193'><b>paused:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
+                        "format": "<span color='#6D6D69'>[ </span><span color='#c4b08f'><b>music:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
+                        "format-paused": "<span color='#6D6D69'>[ </span><span color='#c4b08f'><b>paused:</b></span> {artist} - {title}<span color='#252525'> ]</span>",
                         "max-length": 40,
                         "player-icons": {
                                 "default": "▶",
@@ -28,12 +28,17 @@
                         "status-icons": {
                                 "paused": "⏸"
                         },
-                        // Isso garante que tudo fique em minúsculo como no seu relógio
                         "artist-len": 15,
                         "title-len": 20
                 },
                 "tray": {
                         "spacing": 10
+                },
+                "hyprland/language": {
+                        "format": "keyb: {}",
+                        "format-en": "en",
+                        "format-pt": "pt",
+                        "keyboard-name": "by-tech-usb-gaming-keyboard"
                 },
                 "pulseaudio": {
                         // "scroll-step": 1, // %, can be a float
