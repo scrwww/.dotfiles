@@ -1,4 +1,4 @@
-function ColorNvim(color)
+function SetTheme(color)
     vim.cmd('set termguicolors')
     if color ~= nil then
         vim.cmd.colorscheme(color)
@@ -16,4 +16,6 @@ return {
     lazy = false,
     priority = 100,
 }
+
+
 
