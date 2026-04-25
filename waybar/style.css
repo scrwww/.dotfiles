@@ -5,9 +5,11 @@
 @define-color dim0 #545464;
 
 * {
-    font-size: 13px;
+    font-size: 12px;
     font-family: "CommitMono";
     font-weight: 200;
+    min-height: 0;
+    padding: 0;
 }
 
 #workspaces, #window, #mpris, #language, #pulseaudio, #memory, #clock, #disk, #tray {
@@ -21,7 +23,7 @@ window#waybar {
 
 #workspaces button {
     color: @foreground;
-    padding: 0 4px;
+    padding: 0 2px;
     border-radius: 0;
 }
 
