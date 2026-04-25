@@ -28,23 +28,26 @@ window#waybar {
 
 .modules-left {
     border-radius: 8px;
-    padding: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
     margin:8 0 0 8;
-    background: alpha(#1c1c1c,.3);
+    background: alpha(#1c1c1c,.7);
 }
 
 .modules-center {
     border-radius: 8px;
-    padding: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
     margin:8 0 0 0;
-    background: alpha(#1c1c1c,.3);
+    background: alpha(#1c1c1c,.7);
 }
 
 .modules-right {
     border-radius: 8px;
-    padding: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
     margin:8 8 0 0;
-    background: alpha(#1c1c1c,.3);
+    background: alpha(#1c1c1c,.7);
 }
 
 #pulseaudio {
