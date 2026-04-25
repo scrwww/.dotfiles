@@ -5,26 +5,27 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 
 
 c.tabs.title.format = "{audio}{current_title}"
-c.fonts.web.size.default = 20
+c.fonts.web.size.default = 12
 
 c.url.searchengines = {
-# note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
-        'DEFAULT': 'https://duckduckgo.com/?q={}',
-        '!aw': 'https://wiki.archlinux.org/?search={}',
-        '!apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
-        '!gh': 'https://github.com/search?o=desc&q={}&s=stars',
-        '!yt': 'https://www.youtube.com/results?search_query={}',
-        }
+    # note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    '!aw': 'https://wiki.archlinux.org/?search={}',
+    '!apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
+    '!gh': 'https://github.com/search?o=desc&q={}&s=stars',
+    '!yt': 'https://www.youtube.com/results?search_query={}',
+}
 
-c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
+c.completion.open_categories = [
+    'searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
 
-config.load_autoconfig() # load settings done via the gui
+config.load_autoconfig()  # load settings done via the gui
 
-c.auto_save.session = True # save tabs on quit/restart
+c.auto_save.session = True  # save tabs on quit/restart
 
 # keybinding changes
 config.bind('=', 'cmd-set-text -s :open')
-config.bind('<ctrl-h>', 'back')   
+config.bind('<ctrl-h>', 'back')
 config.bind('<ctrl-l>', 'forward')
 config.bind('<ctrl-K>', 'tab-prev')
 config.bind('<ctrl-J>', 'tab-next')
@@ -42,6 +43,9 @@ config.bind('tT', 'config-cycle tabs.position top left')
 config.bind('gL', 'tab-move +')
 config.bind('gH', 'tab-move -')
 config.bind('gm', 'tab-move')
+config.bind(';d', 'hint all download')
+
+config.bind('cb', 'config-cycle colors.webpage.darkmode.enabled')
 
 # dark mode setup
 # c.colors.webpage.darkmode.enabled = True
@@ -52,17 +56,18 @@ config.bind('gm', 'tab-move')
 # styles, cosmetics
 # c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube-tweaks.css"]
 c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 2, 'right': 2}
-c.tabs.indicator.width = 0 # no tab indicators
+c.tabs.indicator.width = 0  # no tab indicators
 # c.window.transparent = True # apparently not needed
 c.tabs.width = '20%'
 
 # fonts
-c.fonts.default_family = ['CommitMono']
-c.fonts.default_size = '11pt'
-c.fonts.web.family.fixed = 'CommitMono'
-c.fonts.web.family.sans_serif = 'CommitMono'
-c.fonts.web.family.serif = 'CommitMono'
-c.fonts.web.family.standard = 'CommitMono'
+font = 'JetBrainsMono Nerd Font Mono'
+c.fonts.default_family = [font]
+c.fonts.default_size = '9pt'
+c.fonts.web.family.fixed = font
+c.fonts.web.family.sans_serif = font
+c.fonts.web.family.serif = font
+c.fonts.web.family.standard = font
 
 # privacy - adjust these settings based on your preference
 # config.set("completion.cmd_history_max_items", 0)
@@ -82,27 +87,28 @@ c.fonts.web.family.standard = 'CommitMono'
 # You can also watch yt vids directly in mpv, see qutebrowser FAQ for how to do that.
 # If you want additional blocklists, you can get the python-adblock package, or you can uncomment the ublock lists here.
 c.content.blocking.enabled = True
-c.content.blocking.method = 'adblock' # uncomment this if you install python-adblock
+# uncomment this if you install python-adblock
+c.content.blocking.method = 'adblock'
 c.content.blocking.adblock.lists = [
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
-        "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"]
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"]
 
-c.content.javascript.log_message.excludes = {"userscript:_qute_stylesheet": ["*Refused to apply inline style because it violates the following Content Security Policy directive: *"], 
+c.content.javascript.log_message.excludes = {"userscript:_qute_stylesheet": ["*Refused to apply inline style because it violates the following Content Security Policy directive: *"],
                                              "userscript:_qute_js": ["*TrustedHTML*"]}
 
 bg0_hard = "#1d2021"
@@ -139,7 +145,7 @@ dark_aqua = "#689d6a"
 dark_gray = "#a89984"
 dark_orange = "#d65d0e"
 
-### Completion
+# Completion
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
@@ -187,7 +193,7 @@ c.colors.completion.scrollbar.fg = c.colors.completion.item.selected.fg
 # Color of the scrollbar in the completion view.
 c.colors.completion.scrollbar.bg = c.colors.completion.category.bg
 
-### Context menu
+# Context menu
 
 # Background color of disabled items in the context menu.
 c.colors.contextmenu.disabled.bg = bg3
@@ -199,15 +205,15 @@ c.colors.contextmenu.disabled.fg = fg3
 c.colors.contextmenu.menu.bg = bg0
 
 # Foreground color of the context menu. If set to null, the Qt default is used.
-c.colors.contextmenu.menu.fg =  fg2
+c.colors.contextmenu.menu.fg = fg2
 
 # Background color of the context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.bg = bg2
 
-#Foreground color of the context menu’s selected item. If set to null, the Qt default is used.
+# Foreground color of the context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.fg = c.colors.contextmenu.menu.fg
 
-### Downloads
+# Downloads
 
 # Background color for the download bar.
 c.colors.downloads.bar.bg = bg0
@@ -227,7 +233,7 @@ c.colors.downloads.stop.bg = bright_aqua
 # Foreground color for downloads with errors.
 c.colors.downloads.error.fg = bright_red
 
-### Hints
+# Hints
 
 # Font color for hints.
 c.colors.hints.fg = bg0
@@ -238,7 +244,7 @@ c.colors.hints.bg = 'rgba(250, 191, 47, 200)'  # bright_yellow
 # Font color for the matched part of hints.
 c.colors.hints.match.fg = bg4
 
-### Keyhint widget
+# Keyhint widget
 
 # Text color for the keyhint widget.
 c.colors.keyhint.fg = fg4
@@ -249,7 +255,7 @@ c.colors.keyhint.suffix.fg = fg0
 # Background color of the keyhint widget.
 c.colors.keyhint.bg = bg0
 
-### Messages
+# Messages
 
 # Foreground color of an error message.
 c.colors.messages.error.fg = bg0
@@ -278,7 +284,7 @@ c.colors.messages.info.bg = bg0
 # Border color of an info message.
 c.colors.messages.info.border = c.colors.messages.info.bg
 
-### Prompts
+# Prompts
 
 # Foreground color for prompts.
 c.colors.prompts.fg = fg2
@@ -292,7 +298,7 @@ c.colors.prompts.bg = bg3
 # Background color for the selected item in filename prompts.
 c.colors.prompts.selected.bg = bg2
 
-### Statusbar
+# Statusbar
 
 # Foreground color of the statusbar.
 c.colors.statusbar.normal.fg = fg2
@@ -365,7 +371,7 @@ c.colors.statusbar.url.success.https.fg = fg0
 # Foreground color of the URL in the statusbar when there's a warning.
 c.colors.statusbar.url.warn.fg = bright_purple
 
-### tabs
+# tabs
 
 # Background color of the tab bar.
 c.colors.tabs.bar.bg = bg0

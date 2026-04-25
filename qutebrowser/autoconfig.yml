@@ -6,7 +6,39 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        <Ctrl+h>: back
+        <Ctrl+j>: tab-next
+        <Ctrl+k>: tab-prev
+        <Ctrl+l>: forward
+        '=': cmd-set-text -s :open
+        M: hint links spawn mpv {hint-url}
+        T: hint links tab
+        cs: cmd-set-text -s :config-source
+        gH: tab-move -
+        gL: tab-move +
+        gf: hint images download
+        gfd: hint all download
+        gm: tab-move
+        h: history
+        pP: open -- {primary}
+        pp: open -- {clipboard}
+        pt: open -t -- {clipboard}
+        qm: macro-record
+        sH: config-cycle statusbar.show always never
+        tH: config-cycle tabs.show multiple never
+        tT: config-cycle tabs.position top left
   colors.webpage.darkmode.enabled:
     global: false
+  content.blocking.method:
+    global: both
+  scrolling.smooth:
+    global: true
   tabs.position:
     global: left
+  tabs.show:
+    global: multiple
+  tabs.width:
+    global: 10%
