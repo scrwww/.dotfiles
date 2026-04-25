@@ -17,11 +17,11 @@ packages=(
         tmux
         fzf
         unzip
+        thunar
         nvim
         hyprpaper
         waypaper
         rofi-wayland
-        ttf-iosevka-nerd
         waybar
         wl-clipboard
         wl-clip-persist
