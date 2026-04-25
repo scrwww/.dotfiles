@@ -2,8 +2,6 @@ configuration {
 font: "JetBrainsMono 10";
       show-icons: true;
       click-to-exit: true;
-      display-drun: ">";
-      drun-display-format: "{name}";
 }
 
 * {
@@ -15,15 +13,16 @@ acc: #c4746e;
 
 window {
         border-color: @acc;
-border: 5px;
+border: 2px;
 margin: 50px;
-width: 30%;
-anchor: east;
-location: east;
+width: 100%;
+height: 100%;
+anchor: south;
+location: north;
 }
 
 element-icon {
-size: 32px;
+size: 64px;
 }
 
 entry {
@@ -36,12 +35,11 @@ element-text selected {
 }
 
 listview {
-columns: 2;
+columns: 4;
 dynamic: false;
 }
 
 element-text {
 margin: 4px;
         text-color: @fg;
-
 }
