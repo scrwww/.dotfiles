@@ -3,7 +3,7 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         config=function ()
-            vim.cmd.colorscheme("nord")
+            vim.cmd.colorscheme("tokyonight")
         end
     },
     {
@@ -38,5 +38,20 @@ return {
     },
     {
         "arcticicestudio/nord-vim",
+    },
+    {
+        "fcpg/vim-fahrenheit",
+    },
+    {
+        "adigitoleo/vim-mellow",
+    },
+    {
+        "Biscuit-Theme/nvim",
+    },
+    {
+        "sample-usr/rakis.nvim",
+    },
+    {
+        "armannikoyan/rusty",
     },
 }
