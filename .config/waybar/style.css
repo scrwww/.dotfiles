@@ -6,7 +6,7 @@
 window#waybar {
     margin-top: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #1c1c1c;
     color: #ffffff;
 }
 
@@ -19,7 +19,7 @@ window#waybar {
 
 #workspaces button.active {
     background-color: transparent;
-    color: #282828;
+    color: #606060;
 }
 
 #workspaces button:hover {
