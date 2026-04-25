@@ -1,8 +1,8 @@
 @import "./rose-pine.css";
 
 * {
-        font-size: 10px;
-        font-family: "MartianMono Nerd Font";
+        font-size: 14px;
+        font-family: "Iosevka Nerd Font";
 }
 
 window#waybar {
