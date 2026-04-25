@@ -3,8 +3,7 @@
         "spacing": 5, // Gaps between modules (4px)
         "modules-left": ["hyprland/workspaces"],
         "modules-right": ["disk","pulseaudio","clock","tray","memory"],
-        
-        
+
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
@@ -80,6 +79,6 @@
             "format-bluetooth-muted": "--  OUT MUTE |  INPUT {format_source_muted}",
             "format-source": "{volume}%",
             "format-source-muted": "",
-            "on-click": "pwvucontrol"
+            "on-click": "pavucontrol"
         },
 }
