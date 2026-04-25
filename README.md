@@ -1,1 +1,1 @@
-#simple dotfiles, focused on just doing stuff
+# simple dotfiles, focused on just doing stuff
