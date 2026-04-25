@@ -1,5 +1,4 @@
 @import "./rose-pine.css";
-        color: @text;
 
 * {
         font-size: 14px;
@@ -50,6 +49,10 @@ window#waybar {
         padding: 0;
 
         border-radius: 0px;
+}
+
+#memory {
+        color: @text;
 }
 
 #clock {

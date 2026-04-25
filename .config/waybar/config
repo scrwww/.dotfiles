@@ -17,6 +17,7 @@
                 "7": "j",
                 "8": "k",
                 "9": "l",
+                "10": "n",
             }
         },
         "keyboard-state": {
@@ -62,7 +63,9 @@
             "tooltip": false
         },
         "memory": {
-            "format": "{}% "
+            "interval": 30,
+            "format": "{}% ",
+            "max-length": 10
         },
         "disk": {
             "interval": 30,
