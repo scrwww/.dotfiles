@@ -14,7 +14,7 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         config=function ()
-            vim.cmd.colorscheme("tokyonight-moon")
+            vim.cmd.colorscheme("lackluster")
         end
     },
     {

@@ -1,74 +1,59 @@
-@import "./rose-pine.css";
-
 * {
-        font-size: 14px;
-        font-family: "Iosevka Nerd Font";
+    font-size: 14px;
+    font-family: "Iosevka Nerd Font Mono";
 }
 
 window#waybar {
-        background-color: @base;
-        margin-top: 0;
-        padding: 0;
+    margin-top: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 #workspaces button {
-        background-color: transparent;
-        padding: 0;
-        color: @text;
-
-        border-radius: 0px;
-}
-
-#workspaces button:hover {
-        background: @text;
-        color: @foam;
-        box-shadow: inherit;
-        text-shadow: inherit;
-        border: transparent;
+    background-color: transparent;
+    padding: 0 4px;
+    border-radius: 0px;
+    color: #ffffff;
 }
 
 #workspaces button.active {
-        color: @foam;
-        background-color: transparent;
+    background-color: transparent;
+    color: #282828;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background-color: #282828;
 }
 
 .modules-left {
-        margin-top: 0;
-        margin-left: 0;
+    margin-top: 0;
+    margin-left: 0;
 }
 
 .modules-right {
-        margin-top: 0;
-        margin-right: 5px;
+    margin-top: 0;
+    margin-right: 5px;
 }
 
 #pulseaudio {
-        color: @text;
-        background-color: transparent;
-
-        padding: 0;
-
-        border-radius: 0px;
-}
-
-#memory {
-        color: @text;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0px;
+    color: #ffffff;
 }
 
 #clock {
-        color: @text;
-        background-color: transparent;
-
-        padding: 0;
-
-        border-radius: 0px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0px;
+    color: #ffffff;
 }
 
 #tray {
-        color: @text;
-        background-color: transparent;
-
-        padding: 0;
-
-        border-radius: 0px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0px;
+    color: #ffffff;
 }

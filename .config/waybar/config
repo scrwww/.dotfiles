@@ -34,7 +34,7 @@
             "spacing": 10
         },
         "clock": {
-            "format": "{:%H:%M}  ",
+            "format": "-- {:%H:%M}",
             "format-alt": "{:%A, %B %d, %Y (%R)}  ",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "calendar": {
@@ -63,21 +63,21 @@
             "tooltip": false
         },
         "memory": {
-            "interval": 30,
-            "format": "{}% ",
+            "interval": 1,
+            "format": "-- {}% ",
             "max-length": 10
         },
         "disk": {
             "interval": 30,
-            "format": "{percentage_free}% remaining on disk",
-            "path": "/"
+            "format": "{percentage_free}% DISK",
+            "path": "/home"
         },
         "pulseaudio": {
             // "scroll-step": 1, // %, can be a float
-            "format": "OUT {volume}% | INPUT {format_source}",
-            "format-muted": "OUT MUTED | INPUT {format_source}",
-            "format-bluetooth": " OUT {volume}% |  INPUT {format_source}",
-            "format-bluetooth-muted": " OUT MUTE |  INPUT {format_source_muted}",
+            "format": "-- OUT {volume}% | INPUT {format_source}",
+            "format-muted": "-- OUT MUTED | INPUT {format_source}",
+            "format-bluetooth": "--  OUT {volume}% |  INPUT {format_source}",
+            "format-bluetooth-muted": "--  OUT MUTE |  INPUT {format_source_muted}",
             "format-source": "{volume}%",
             "format-source-muted": "",
             "on-click": "pwvucontrol"

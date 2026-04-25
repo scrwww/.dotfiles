@@ -28,7 +28,6 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "omnisharp",
                 "ts_ls",
             },
             handlers = {
@@ -66,6 +65,12 @@ return {
                                 }
                             }
                         }
+                    }
+                    lspconfig.omnisharp.setup {
+                        cmd = { "OmniSharp" },
+                        enable_roslyn_analyzers = true,
+                        organize_imports_on_format = true,
+                        enable_import_completion = true,
                     }
                 end,
             }

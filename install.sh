@@ -18,6 +18,8 @@ packages=(
         kitty
         tmux
         fzf
+        unzip
+        zsh
         firefox
         nvim
         hyprpaper

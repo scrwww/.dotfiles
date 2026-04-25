@@ -4,6 +4,10 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/home/un/.local/bin:$PATH"
+source /usr/share/nvm/init-nvm.sh
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -12,6 +16,8 @@ export PATH="/home/un/.local/bin:$PATH"
 ZSH_THEME="awesomepanda"
 
 alias oo="cd $HOME/personal/vaults/"
+alias ls="ls -a"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
