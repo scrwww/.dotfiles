@@ -1,23 +1,32 @@
-function SetTheme(color)
-    vim.cmd('set termguicolors')
-    if color ~= nil then
-        vim.cmd.colorscheme(color)
-    else
-        vim.cmd.colorscheme("habamax")
-    end
-    --    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    --    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
+-- function SetTheme(color)
+--     vim.cmd('set termguicolors')
+--     if color ~= nil then
+--         vim.cmd.colorscheme(color)
+--     else
+--         vim.cmd.colorscheme("habamax")
+--     end
+--     --    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--     --    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- end
 
 return {
-    "rebelot/kanagawa.nvim",
-    "ellisonleao/gruvbox.nvim",
-    "slugbyte/lackluster.nvim",
-    "folke/tokyonight.nvim",
-    "rose-pine/neovim",
-    lazy = false,
-    priority = 100,
+        {
+                "rebelot/kanagawa.nvim",
+                lazy = false,
+                config=function ()
+                        vim.cmd.colorscheme("kanagawa")
+                end
+        },
+        {
+                "ellisonleao/gruvbox.nvim",
+        },
+        {
+                "slugbyte/lackluster.nvim",
+        },
+        {
+                "folke/tokyonight.nvim",
+        },
+        {
+                "rose-pine/neovim",
+        },
 }
-
-
-

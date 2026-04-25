@@ -1,10 +1,24 @@
 return{
-  'nvim-orgmode/orgmode',
-  config = function()
-    -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = '~/personal/org/*',
-      org_default_notes_file = '~/personal/org/refile.org',
-    })
-  end,
+        "nvim-neorg/neorg",
+        lazy = false,
+        version = "*",
+        config = function()
+                require("neorg").setup {
+                        load = {
+                                ["core.defaults"] = {},
+                                ["core.concealer"] = {},
+                                ["core.dirman"] = {
+                                        config = {
+                                                workspaces = {
+                                                        notes = "~/personal/org/notes",
+                                                },
+                                                default_workspace = "notes",
+                                        },
+                                },
+                        },
+                }
+
+                vim.wo.foldlevel = 99
+                vim.wo.conceallevel = 2
+        end,
 }
