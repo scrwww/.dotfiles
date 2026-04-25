@@ -7,7 +7,8 @@
         "modules-center": [
         ],
         "modules-right": [
-            "pulseaudio",
+            "disk",
+        "pulseaudio",
         "clock",
         "tray"
         ],
@@ -35,8 +36,13 @@
         "memory": {
             "format": "{}% "
         },
-        "pulseaudio": {
-            // "scroll-step": 1, // %, can be a float
+        "disk": {
+            "interval": 30,
+            "format": "Only {percentage_free}% remaining on {path}",
+            "path": "/"
+        },
+            "pulseaudio": {
+                // "scroll-step": 1, // %, can be a float
             "format": "VOL: OUT {volume}% | IN {format_source}",
             "format-muted": "VOL: OUT MUTED | IN {format_source}",
             "format-bluetooth": " VOL: OUT {volume}% |  IN {format_source}",
