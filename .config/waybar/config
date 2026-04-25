@@ -43,11 +43,11 @@
                 "weeks-pos"     : "right",
                 "on-scroll"     : 1,
                 "format": {
-                    "months":     "<span color='#c4a7e7'><b>{}</b></span>",
-                    "days":       "<span color='#e0def4'><b>{}</b></span>",
-                    "weeks":      "<span color='#ebbcba'><b>W{}</b></span>",
-                    "weekdays":   "<span color='#f6c177'><b>{}</b></span>",
-                    "today":      "<span color='#31748f'><b><u>{}</u></b></span>"
+                    "months":     "<span><b>{}</b></span>",
+                    "days":       "<span><b>{}</b></span>",
+                    "weeks":      "<span><b>W{}</b></span>",
+                    "weekdays":   "<span><b>{}</b></span>",
+                    "today":      "<span><b><u>{}</u></b></span>"
                 }
             },
             "actions":  {
@@ -64,7 +64,7 @@
         },
         "memory": {
             "interval": 1,
-            "format": "{}% ",
+            "format": "{}%",
             "max-length": 10
         },
         "disk": {

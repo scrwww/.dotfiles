@@ -24,4 +24,16 @@ return {
     {
         "vague2k/vague.nvim",
     },
+    {
+        "deparr/tairiki.nvim",
+    },
+    {
+        "AlessandroYorba/Alduin",
+    },
+    {
+        "chriskempson/vim-tomorrow-theme",
+    },
+    {
+        "savq/melange-nvim",
+    },
 }
