@@ -17,4 +17,4 @@ fi
 [[ -z ${book_sel:-} ]] && exit 0
 [[ ! -f "$book_sel" ]] && { echo "File not found: $book_sel"; exit 1; }
 
-zathura --fork "${book_sel}" && exit
+uwsm app -- zathura --fork "${book_sel}" && exit

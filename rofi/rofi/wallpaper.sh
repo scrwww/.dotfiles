@@ -13,10 +13,10 @@ if [ $# -gt 0 ]; then
         exit 1
     fi
     echo "$wall" > "$last"
-    hyprctl hyprpaper unload all          >/dev/null
-    hyprctl hyprpaper preload "$wall"     >/dev/null
-    hyprctl hyprpaper wallpaper ",$wall"  >/dev/null
-    hyprctl notify 5 5000 0 "Wallpaper" "$(basename "$wall")" >/dev/null 2>&1
+    uwsm app -- hyprctl hyprpaper unload all          >/dev/null
+    uwsm app -- hyprctl hyprpaper preload "$wall"     >/dev/null
+    uwsm app -- hyprctl hyprpaper wallpaper ",$wall"  >/dev/null
+    uwsm app -- hyprctl notify 5 5000 0 "Wallpaper" "$(basename "$wall")" >/dev/null 2>&1
     exit 0
 fi
 

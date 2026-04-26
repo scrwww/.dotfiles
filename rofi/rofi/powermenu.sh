@@ -2,7 +2,7 @@
 
 theme="kanso-rofi"
 dir="$HOME/.config/rofi"
-rofi_command="rofi -theme $dir/$theme -no-fixed-num-lines"
+rofi_command="uwsm app -- rofi -theme $dir/$theme -no-fixed-num-lines -run-command 'uwsm app -- {cmd}'"
 
 shutdown="Shutdown"
 reboot="Reboot"
@@ -33,12 +33,7 @@ case $chosen in
         ;;
 	$logout)
 		if confirm_exit; then
-			# try gracefully exit apps
-			HYPRCMDS=$(hyprctl -j clients | jq -j '.[] | "dispatch closewindow address:\(.address); "')
-			hyprctl --batch "$HYPRCMDS" >> /tmp/hypr/hyrpexitwithgrace.log 2>&1
-		
-			# then logout
-			hyprctl dispatch exit
+                        uwsm stop
 		fi
 	;;
 	$lock)
