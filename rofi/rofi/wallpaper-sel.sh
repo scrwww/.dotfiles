@@ -8,7 +8,7 @@ if [ ! -x "$mode_script" ]; then
     chmod +x "$mode_script"
 fi
 
-uwsm app -- rofi -show wallpaper \
+uwsm-app -- rofi -show wallpaper \
         -modi "wallpaper:$mode_script" \
         -show-icons \
         -theme "$dir/$theme"

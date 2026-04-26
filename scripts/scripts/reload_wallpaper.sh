@@ -2,7 +2,7 @@
 
 # Ensure hyprpaper is running
 if ! pgrep -x "hyprpaper" > /dev/null; then
-    uwsm app -- hyprpaper &
+    uwsm-app -- hyprpaper &
     sleep 1 # Wait for hyprpaper to initialize
 fi
 
@@ -17,7 +17,7 @@ wall=$(<"$last_wallpaper")
 
 # Check if the wallpaper file exists before trying to load it
 if [[ -f "$wall" ]]; then
-    uwsm app -- hyprctl hyprpaper unload all          >/dev/null
-    uwsm app -- hyprctl hyprpaper preload "$wall"     >/dev/null
-    uwsm app -- hyprctl hyprpaper wallpaper ",$wall"  >/dev/null
+    uwsm-app -- hyprctl hyprpaper unload all          >/dev/null
+    uwsm-app -- hyprctl hyprpaper preload "$wall"     >/dev/null
+    uwsm-app -- hyprctl hyprpaper wallpaper ",$wall"  >/dev/null
 fi

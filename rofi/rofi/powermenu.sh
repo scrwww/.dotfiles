@@ -2,7 +2,7 @@
 
 theme="kanso-rofi"
 dir="$HOME/.config/rofi"
-rofi_command="uwsm app -- rofi -theme $dir/$theme -no-fixed-num-lines -run-command 'uwsm app -- {cmd}'"
+rofi_command="uwsm-app -- rofi -theme $dir/$theme -no-fixed-num-lines -run-command 'uwsm-app -- {cmd}'"
 
 shutdown="Shutdown"
 reboot="Reboot"
