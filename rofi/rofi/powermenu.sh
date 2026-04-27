@@ -7,8 +7,6 @@ rofi_command="uwsm-app -- rofi -theme $dir/$theme -no-fixed-num-lines -run-comma
 shutdown="Shutdown"
 reboot="Reboot"
 logout="Logout"
-lock="Lock"
-suspend="Suspend"
 
 confirm_exit() {
 	confirm=$(printf "No\nYes" | $rofi_command -dmenu -i -lines 2 -p "Are You Sure?")
@@ -36,15 +34,4 @@ case $chosen in
                         uwsm stop
 		fi
 	;;
-	$lock)
-        uwsm-app -- hyprlock & "$HOME/.config/rofi/hyprlock_suspend_timer.sh" &
-	;;
-    	$suspend)
-		if confirm_exit; then
-			# mute all
-			amixer set Master mute
-			systemctl suspend
-		fi
-        ;;
-
 esac
