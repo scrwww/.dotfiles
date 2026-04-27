@@ -37,7 +37,7 @@ case $chosen in
 		fi
 	;;
 	$lock)
-        hyprlock & "$HOME/.config/rofi/hyprlock_suspend_timer.sh" &
+        uwsm-app -- hyprlock & "$HOME/.config/rofi/hyprlock_suspend_timer.sh" &
 	;;
     	$suspend)
 		if confirm_exit; then
