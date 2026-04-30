@@ -2,7 +2,7 @@
 
 theme="kanso-rofi"
 dir="$HOME/.config/rofi"
-rofi_command="uwsm-app -- rofi -theme $dir/$theme -no-fixed-num-lines -run-command 'uwsm-app -- {cmd}'"
+rofi_command="rofi -theme $dir/$theme -no-fixed-num-lines -run-command '{cmd}'"
 
 shutdown="Shutdown"
 reboot="Reboot"
@@ -31,7 +31,7 @@ case $chosen in
         ;;
 	$logout)
 		if confirm_exit; then
-                        uwsm stop
+                        hyprctl dispatch exit
 		fi
 	;;
 esac
