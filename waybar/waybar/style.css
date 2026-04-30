@@ -5,7 +5,7 @@
 @define-color dim0 #545464;
 
 * {
-        font-size: 12px;
+        font-size: 14px;
         font-family: "CommitMono";
         font-weight: 200;
         min-height: 0;
@@ -38,4 +38,8 @@ window#waybar {
 
 #workspaces button.active {
         border-bottom: solid 2px @foreground;
+}
+
+#clock {
+        background: #000000;
 }
