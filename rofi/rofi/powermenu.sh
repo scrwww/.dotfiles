@@ -31,7 +31,7 @@ case $chosen in
         ;;
 	$logout)
 		if confirm_exit; then
-                        hyprctl dispatch exit
+                        swaymsg exit
 		fi
 	;;
 esac

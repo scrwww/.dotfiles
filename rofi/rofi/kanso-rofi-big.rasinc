@@ -5,15 +5,15 @@ font: "JetBrainsMono 10";
 }
 
 * {
-bg: #22262D;
-fg: #C5C9C7;
-acc: #c4746e;
+bg: #100F0F;
+fg: #CECDC3;
+acc: #6F6E69;
     background-color: @bg;
 }
 
 window {
         border-color: @acc;
-border: 2px;
+border: 0px;
 margin: 50px;
 width: 100%;
 height: 100%;
@@ -22,7 +22,7 @@ location: north;
 }
 
 element-icon {
-size: 64px;
+size: 110px;
 }
 
 entry {

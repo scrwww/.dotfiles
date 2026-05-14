@@ -1,0 +1,155 @@
+### Variables
+set $mod Mod4
+set $terminal foot
+set $webbrowser firefox
+set $fileManager nautilus
+set $menu ~/.config/rofi/launcher.sh
+
+output HDMI-A-1 mode 1600x900@60Hz position 0 0
+# output HDMI-A-1 mode 1024x768@75.029Hz position 0 0
+output VGA-1 mode 1024x768@60Hz position 1600 0
+
+input * {
+    xkb_layout "us,br"
+    xkb_options "grp:win_space_toggle,ctrl:nocaps"
+    repeat_rate 80
+    repeat_delay 300
+}
+
+# Logitech G203
+input "1133:16514:Logitech_G203_LIGHTSYNC_Gaming_Mouse" {
+    pointer_accel 0
+    accel_profile flat
+}
+
+bindsym $mod+t exec $terminal
+bindsym $mod+q exec $webbrowser
+bindsym $mod+c kill
+bindsym $mod+e exec $fileManager
+bindsym $mod+v floating toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+r exec $menu
+bindsym $mod+Shift+Delete exec ~/.config/rofi/powermenu.sh
+
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output HDMI-A-1
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output HDMI-A-1
+workspace 9 output HDMI-A-1
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+h workspace prev
+bindsym $mod+l workspace next
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+Ctrl+h focus left
+bindsym $mod+Ctrl+j focus down
+bindsym $mod+Ctrl+k focus up
+bindsym $mod+Ctrl+l focus right
+
+bindsym $mod+Tab focus next
+
+mode "resize" {
+    bindsym Ctrl+h resize shrink width 10 px
+    bindsym Ctrl+j resize grow height 10 px
+    bindsym Ctrl+k resize shrink height 10 px
+    bindsym Ctrl+l resize grow width 10 px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "resize"
+
+floating_modifier $mod normal
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+b scratchpad show
+bindsym $mod+Shift+b move scratchpad
+
+bindsym $mod+y exec ~/.config/rofi/cliphistory.sh
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+# bindsym $mod+i exec hyprpicker | wl-copy
+bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+
+
+bindsym $mod+Shift+r exec $terminal ~/.config/scripts/reader.sh
+
+bindsym $mod+w exec ~/.config/rofi/wallpaper-sel.sh
+
+for_window [class="xpad"] floating enable, move position 1200 60
+for_window [class="discord"] move workspace 6
+
+default_border none 
+gaps inner 0
+gaps outer 0
+
+set $color0  #22262D
+set $color1  #c4746e
+set $color2  #8a9a7b
+set $color3  #c4b28a
+set $color4  #8ba4b0
+set $color5  #a292a3
+set $color6  #8ea4a2
+set $color7  #a4a7a4
+
+set $color8  #5C6066
+set $color9  #E46876
+set $color10 #87a987
+set $color11 #E6C384
+set $color12 #7FB4CA
+set $color13 #938AA9
+set $color14 #7AA89F
+set $color15 #C5C9C7
+
+set $color16 #b6927b
+set $color17 #b98d7b
+
+set $background #22262D
+set $foreground #C5C9C7
+set $selection  #43464E
+
+
+# <colorclass>          <border>  <backgr.> <text>    <indicator> <child_border>
+client.focused          $color4   $color4   $color0   $color12    $color4
+client.focused_inactive $selection $selection $color7   $color8     $selection
+client.unfocused        $color0   $color0   $color7   $color0     $color0
+client.urgent           $color1   $color1   $color15  $color9     $color1
+client.placeholder      $color0   $color0   $color7   $color0     $color0
+client.background       $background
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+exec Discord
+exec waybar
+exec ~/.config/scripts/reload_wallpaper.sh
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+
+exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'

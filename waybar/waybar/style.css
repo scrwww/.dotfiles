@@ -1,8 +1,5 @@
 @define-color background #efe6c6;
-@define-color accent #d6b893;
 @define-color foreground #ffffff;
-@define-color selection #c7d7e0;
-@define-color dim0 #545464;
 
 * {
         font-size: 14px;

@@ -1,23 +1,28 @@
 #!/usr/bin/env bash
 
-# Ensure hyprpaper is running
-if ! pgrep -x "hyprpaper" > /dev/null; then
-    hyprpaper &
-    sleep 1 # Wait for hyprpaper to initialize
+LAST_WALL_FILE="$HOME/.cache/last-wallpaper"
+FALLBACK_WALL_FILE="$HOME/.config/hypr/last-wallpaper"
+
+exec_detached() {
+    local cmd="$1"
+    if command -v swaymsg >/dev/null 2>&1 && swaymsg -t get_version >/dev/null 2>&1; then
+        swaymsg exec "$cmd" >/dev/null 2>&1
+    elif command -v hyprctl >/dev/null 2>&1 && hyprctl version >/dev/null 2>&1; then
+        hyprctl dispatch exec "$cmd" >/dev/null 2>&1
+    else
+        (setsid $cmd >/dev/null 2>&1 &)
+    fi
+}
+
+wall_file="$LAST_WALL_FILE"
+if [[ ! -f "$wall_file" ]]; then
+    wall_file="$FALLBACK_WALL_FILE"
 fi
 
-# Try to get the last wallpaper from cache, fallback to config if missing
-last_wallpaper="$HOME/.cache/last-wallpaper"
-if [[ ! -f "$last_wallpaper" ]]; then
-    last_wallpaper="$HOME/.config/hypr/last-wallpaper"
-fi
+[[ -f "$wall_file" ]] || exit 0
+wall=$(cat "$wall_file")
 
-[[ -f "$last_wallpaper" ]] || exit 0
-wall=$(<"$last_wallpaper")
-
-# Check if the wallpaper file exists before trying to load it
 if [[ -f "$wall" ]]; then
-    hyprctl hyprpaper unload all          >/dev/null
-    hyprctl hyprpaper preload "$wall"     >/dev/null
-    hyprctl hyprpaper wallpaper ",$wall"  >/dev/null
+    pkill swaybg || true
+    exec_detached "swaybg -i \"$wall\" -m fill"
 fi

@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MODE_SCRIPT="$SCRIPT_DIR/wallpaper.sh"
+THEME="$SCRIPT_DIR/kanso-rofi-big.rasinc"
 
-mode_script=~/.config/rofi/wallpaper.sh
-dir=$HOME/.config/rofi
-theme=kanso-rofi-big
-
-if [ ! -x "$mode_script" ]; then
-    chmod +x "$mode_script"
-fi
+pkill rofi || true
 
 rofi -show wallpaper \
-        -modi "wallpaper:$mode_script" \
-        -show-icons \
-        -theme "$dir/$theme"
+     -modi "wallpaper:$MODE_SCRIPT" \
+     -show-icons \
+     -theme "$THEME"
