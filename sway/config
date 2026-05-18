@@ -2,12 +2,12 @@
 set $mod Mod4
 set $terminal foot
 set $webbrowser firefox
-set $fileManager nautilus
+set $fileManager thunar
 set $menu ~/.config/rofi/launcher.sh
 
-output HDMI-A-1 mode 1600x900@60Hz position 0 0
+output HDMI-A-1  mode 1600x900@60Hz position 1024 0 allow_tearing true
 # output HDMI-A-1 mode 1024x768@75.029Hz position 0 0
-output VGA-1 mode 1024x768@60Hz position 1600 0
+output VGA-1 mode 1024x768@60Hz position 0 0 allow_tearing true
 
 input * {
     xkb_layout "us,br"
@@ -21,6 +21,11 @@ input "1133:16514:Logitech_G203_LIGHTSYNC_Gaming_Mouse" {
     pointer_accel 0
     accel_profile flat
 }
+
+# # OpenTabletDriver Virtual Tablet
+# input "0:0:OpenTabletDriver_Virtual_Tablet" {
+#     map_to_output HDMI-A-1
+# }
 
 bindsym $mod+t exec $terminal
 bindsym $mod+q exec $webbrowser
@@ -92,9 +97,9 @@ bindsym $mod+b scratchpad show
 bindsym $mod+Shift+b move scratchpad
 
 bindsym $mod+y exec ~/.config/rofi/cliphistory.sh
-bindsym Print exec grim -g "$(slurp)" - | wl-copy
-# bindsym $mod+i exec hyprpicker | wl-copy
-bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+i exec hyprpicker | wl-copy
+# bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 
 
 bindsym $mod+Shift+r exec $terminal ~/.config/scripts/reader.sh
@@ -142,14 +147,18 @@ client.urgent           $color1   $color1   $color15  $color9     $color1
 client.placeholder      $color0   $color0   $color7   $color0     $color0
 client.background       $background
 
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
+# exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway QT_QPA_PLATFORMTHEME=gtk3
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+exec_always {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+}
+
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 exec Discord
-exec waybar
+# exec waybar
 exec ~/.config/scripts/reload_wallpaper.sh
-
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
-
-exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
